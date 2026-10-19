@@ -15,6 +15,10 @@ Small tools for people shipping with agents. Each one does a single mundane job,
 | `lint_agent_md` | `POST /api/agent-md-lint` | Lints a CLAUDE.md, AGENTS.md or MEMORY.md: line count against the 200-line memory index cap, estimated tokens, duplicate lines, empty headings, leftover TODOs, contradicting rules. |
 | `mcp_install_snippets` | `POST /api/mcp-install` | From an endpoint URL, generates `claude mcp add`, Claude Desktop JSON, Cursor `mcp.json`, Codex config and a curl handshake, after probing the URL once. |
 | `check_ai_crawlers` | `POST /api/ai-crawlers` | Reads a site's robots.txt, reports which AI crawlers are allowed or blocked, checks for llms.txt, and drafts one. |
+| `check_headers` | `POST /api/headers` | Fetches a URL once and grades its response headers (HSTS, CSP, nosniff, frame control, referrer and permissions policies, cookie flags, server leaks), with the header to add for each gap. |
+| `check_page_meta` | `POST /api/meta` | Reads a page the way a crawler and a link unfurler do: title and description lengths, canonical, Open Graph, Twitter card, favicon, viewport, robots, JSON-LD, and the preview card that results. |
+| `json_to_schema` | `POST /api/json-schema` | Turns a JSON sample, or an array of samples, into a JSON Schema (2020-12) and a TypeScript type, with optional keys, nullables, formats and enums inferred. |
+| `explain_cron` | `POST /api/cron` | Cron expression to plain English and the next runs in UTC, with warnings for the cases Workers, GitHub Actions and crontab handle differently. |
 
 ## Using it
 
