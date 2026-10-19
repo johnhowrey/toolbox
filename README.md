@@ -19,6 +19,10 @@ Small tools for people shipping with agents. Each one does a single mundane job,
 | `check_page_meta` | `POST /api/meta` | Reads a page the way a crawler and a link unfurler do: title and description lengths, canonical, Open Graph, Twitter card, favicon, viewport, robots, JSON-LD, and the preview card that results. |
 | `json_to_schema` | `POST /api/json-schema` | Turns a JSON sample, or an array of samples, into a JSON Schema (2020-12) and a TypeScript type, with optional keys, nullables, formats and enums inferred. |
 | `explain_cron` | `POST /api/cron` | Cron expression to plain English and the next runs in UTC, with warnings for the cases Workers, GitHub Actions and crontab handle differently. |
+| `scrub_env` | `POST /api/env-example` | Turns a .env into a safe .env.example that keeps the shape of every value, lists the secrets it found by kind and line (first 4 characters and length only), and flags duplicate keys, bad quoting and export prefixes. |
+| `trace_redirects` | `POST /api/redirects` | Follows a URL hop by hop with status, location and timing, and flags long chains, loops, HTTPS downgrades, 302s used for permanent moves and dropped paths or query strings. |
+| `check_sitemap` | `POST /api/sitemap` | Finds a site's sitemaps through robots.txt, reads index files, counts URLs, hosts and lastmod dates, and fetches a sample of URLs to count the ones that are not 200. |
+| `decode_jwt` | `POST /api/jwt` | Decodes a JWT's header and payload and audits the claims (alg none, key confusion, expiry, sensitive fields). Decode only: it never verifies a signature or takes a secret. |
 
 ## Using it
 
