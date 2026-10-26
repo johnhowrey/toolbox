@@ -23,6 +23,7 @@ Small tools for people shipping with agents. Each one does a single mundane job,
 | `trace_redirects` | `POST /api/redirects` | Follows a URL hop by hop with status, location and timing, and flags long chains, loops, HTTPS downgrades, 302s used for permanent moves and dropped paths or query strings. |
 | `check_sitemap` | `POST /api/sitemap` | Finds a site's sitemaps through robots.txt, reads index files, counts URLs, hosts and lastmod dates, and fetches a sample of URLs to count the ones that are not 200. |
 | `decode_jwt` | `POST /api/jwt` | Decodes a JWT's header and payload and audits the claims (alg none, key confusion, expiry, sensitive fields). Decode only: it never verifies a signature or takes a secret. |
+| `lint_mcp_tools` | `POST /api/mcp-lint` | Lints the tools an MCP server lists, from the model's side: names Claude's API would reject, missing or copied descriptions, undocumented arguments, destructive tools with no hint, and unbounded free-text arguments on them. |
 
 ## Using it
 
@@ -48,7 +49,7 @@ Full reference: https://toolbox.allthepossibles.com/docs
 
 ## Pricing
 
-Free with daily caps per tool and no signup. Pro is $5/month: no daily caps, 300 requests a minute, larger inputs, and a key that works on `/mcp` too. Included in the [Studio Bundle](https://allthepossibles.com).
+Free with daily caps per tool and no signup. Pro is $5/month: no daily caps, 300 requests a minute, larger inputs, and a key that works on `/mcp` too. Included in the [Membership](https://allthepossibles.com).
 
 ## Issues
 
